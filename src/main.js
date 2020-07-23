@@ -7,7 +7,7 @@ let string = `/*你好，我是一名前端萌新
 *首先画一个div
 **/
 #div1{
-    border:1px solid red;
+    border:1px solid #000;
     width:200px;
     height:200px;
 }
@@ -58,19 +58,19 @@ let step = () => {
     setTimeout(() => {
         //如果是回车就替换为br
         //如果不是回车就直接加字符串
-        if(string[n] === '\n'){
+        if (string[n] === '\n') {
             string2 += '<br>'
-        }else if(string[n] === ' '){
+        } else if (string[n] === ' ') {
             string2 += '&nbsp;';
-        }else{
+        } else {
             string2 += string[n];
         }
         html.innerHTML = string2;
-        style.innerHTML = string.substring(0,n);
+        style.innerHTML = string.substring(0, n);
         if (n < string.length - 1) {
             n = n + 1;
-            window.scrollTo(0,9999);
-            html.scrollTo(0,99999);
+            window.scrollTo(0, 9999);
+            html.scrollTo(0, 99999);
             step();
         } else {
 
@@ -79,4 +79,3 @@ let step = () => {
 }
 
 step();
-
